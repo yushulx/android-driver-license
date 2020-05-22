@@ -1,5 +1,8 @@
 # Android Driver's License
 
+## Testing Image
+<kbd><img src="https://www.dynamsoft.com/codepool/wp-content/uploads/2020/05/driver-license.jpg" width="50%">
+
 ## Google Barcode
 <kbd><img src="https://www.dynamsoft.com/codepool/wp-content/uploads/2020/05/google-driver-license.png" width="50%">
 
