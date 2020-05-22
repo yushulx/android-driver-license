@@ -10,4 +10,4 @@
 - https://gist.github.com/filipbec/5998034874b119fab0e4#020602
 - https://developers.google.com/android/reference/com/google/android/gms/vision/barcode/Barcode.DriverLicense
 - https://github.com/googlesamples/android-vision/tree/master/visionSamples/barcode-reader
-- https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx?SampleID=76
+- https://demo.dynamsoft.com/Samples/dwt/Scan-Driver-License-and-Extract-Information/DWT_HTML_Driver_License_PDF417Barcode.html
