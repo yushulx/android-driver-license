@@ -290,9 +290,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 			public void handleMessage(Message msg) {
 				try {
 					Frame frame = (Frame) msg.obj;
-					result = result = reader.decodeBuffer(frame.getImage(), frame.getSize().width, frame.getSize().height, frame.getSize().width, EnumImagePixelFormat.IPF_NV21, "");
 					PointResult pointResult = new PointResult();
-					pointResult.textResults = result;
+					pointResult.textResults = reader.decodeBuffer(frame.getImage(), frame.getSize().width, frame.getSize().height, frame.getSize().width, EnumImagePixelFormat.IPF_NV21, "");
 					Message message = handler.obtainMessage();
 					message.obj = pointResult;
 					message.what = MSG_PAINT;
