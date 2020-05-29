@@ -8,6 +8,12 @@
   
 ## Dynamsoft Barcode
 <kbd><img src="https://www.dynamsoft.com/codepool/wp-content/uploads/2020/05/dynamsoft-driver-license.png" width="50%">
+  
+## One More Thing
+
+Google (left) vs. Dynamsoft (right)
+
+![Google vs. Dynamsoft](https://www.dynamsoft.com/codepool/wp-content/uploads/2020/05/google-dynamsoft-barcode.jpg)
 
 ## Reference
 - https://gist.github.com/filipbec/5998034874b119fab0e4#020602
