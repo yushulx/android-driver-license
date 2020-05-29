@@ -32,7 +32,6 @@ import com.dynamsoft.barcode.EnumImagePixelFormat;
 import com.dynamsoft.barcode.EnumIntermediateResultType;
 import com.dynamsoft.barcode.PublicRuntimeSettings;
 import com.dynamsoft.barcode.TextResult;
-import com.pierfrancescosoffritti.slidingdrawer.SlidingDrawer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
 	private TextView tvContinue;
 	private RelativeLayout viewResult;
-	private SlidingDrawer slidingDrawer;
 	private ListView listView;
 	private RelativeLayout dragView;
 	private TextView tvResultCount;
@@ -229,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		ButterKnife.bind(this);
 		frameUtil = new FrameUtil();
 		try {
-			reader = new BarcodeReader("t0068NQAAAB3OUjxXnjrCN4RaBZBygOddAUJk5Z/JQOi0xEKZAdOO9ZKBwyKzdju34aiiAv9Oos0jH/r5zpsWUuPU66plu5g=");
+			reader = new BarcodeReader("LICENSE-KEY");
 			//You can get trial license from "https://www.dynamsoft.com/CustomerPortal/Portal/Triallicense.aspx"
 			initBarcodeReader();
 
@@ -243,12 +241,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		canvasView = findViewById(R.id.hud_view);
 		tvContinue = findViewById(R.id.tv_continue);
 		viewResult = findViewById(R.id.view_result_img);
-		slidingDrawer = findViewById(R.id.sliding_drawer);
-		listView = findViewById(R.id.barcode_list);
-		dragView = findViewById(R.id.drag_view);
-		tvResultCount = findViewById(R.id.result);
-		tvDrag = findViewById(R.id.drag_text);
-		ivPull = findViewById(R.id.iv_pull);
 		ivPhoto = findViewById(R.id.iv_result);
 		viewPhoto = findViewById(R.id.view_photo);
 		tvBarcodeNumber = findViewById(R.id.tv_barcode_number);
@@ -281,46 +273,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		//} else {
 			numberOfCodes = 0;
 		//}
-		slidingDrawer.setDragView(dragView);
-		slidingDrawer.addSlideListener(new SlidingDrawer.OnSlideListener() {
-			@Override
-			public void onSlide(SlidingDrawer slidingDrawer, float currentSlide) {
-				if (slidingDrawer.getState() == SlidingDrawer.COLLAPSED) {
-					viewPhoto.setVisibility(View.VISIBLE);
-					viewPhoto.bringToFront();
-					ivPull.setImageResource(R.drawable.arrow_up);
-					tvDrag.setText("More results");
-				} else if (slidingDrawer.getState() == SlidingDrawer.EXPANDED) {
-					viewPhoto.setVisibility(View.GONE);
-					ivPull.setImageResource(R.drawable.arrow_down);
-					tvDrag.setText("Scroll down");
-					slidingDrawer.bringToFront();
-				} else if (slidingDrawer.getState() == SlidingDrawer.SLIDING) {
-					slidingDrawer.bringToFront();
-					viewPhoto.setVisibility(View.VISIBLE);
-				}
-			}
-		});
-		ivPull.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (slidingDrawer.getState() == SlidingDrawer.EXPANDED) {
-					slidingDrawer.setState(SlidingDrawer.COLLAPSED);
-				} else if (slidingDrawer.getState() == SlidingDrawer.COLLAPSED) {
-					slidingDrawer.setState(SlidingDrawer.EXPANDED);
-				}
-			}
-		});
-		tvDrag.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (slidingDrawer.getState() == SlidingDrawer.EXPANDED) {
-					slidingDrawer.setState(SlidingDrawer.COLLAPSED);
-				} else if (slidingDrawer.getState() == SlidingDrawer.COLLAPSED) {
-					slidingDrawer.setState(SlidingDrawer.EXPANDED);
-				}
-			}
-		});
 		tvContinue.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
